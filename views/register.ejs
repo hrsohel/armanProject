@@ -7,7 +7,12 @@
             </div>
             <div class="col-2">
                     <div class="from-container">
-                        <h2>Register</h2>
+                        <h2 style="color: red;">Register</h2>
+                        <% if(_existUser) { %>
+                            <h3><%= _existUser %></h3>
+                        <%} else { %>
+                            <h3><%= _existUser %></h3>
+                        <% }%>
                         <form action="register" method="post">
                             <input type="text" name="name" class="input-box" placeholder="Enter Your Name" required>
                             <input type="email" name="email" class="input-box" placeholder="Enter your email here" required>

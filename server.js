@@ -47,8 +47,10 @@ app.get('/contact', (req, res) => {
     })
 })
 app.get('/register', (req, res) => {
+    var existUser = req.session.existUser
+    req.session.existUser = ""
     res.render('register', {
-        title: "Registration"
+        title: "Registration", _existUser: existUser
     })
 })
 app.get('/login', (req, res) => {
